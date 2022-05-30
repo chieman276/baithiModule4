@@ -1,0 +1,28 @@
+<div class="container" style= "width: 600px;">
+    <div class="row">
+      <div class="card-header">
+        <h1 class= "card-title text-center text-danger">Xóa Sách</h1>  
+        <div class="d-flex justify-content-end">
+  
+        </div>
+      </div>
+    <div class="panel-body">
+        <b> Tên sách :</b> {{ book.bookname }}<br>
+        <hr>
+        <b> Tên tác giả :</b> {{ book.author }}<br>
+        <hr>
+        <b> Mô tả :</b> {{ book.description }}
+    </div>
+    <div class="card-footer d-flex justify-content-end" style="overflow: hidden;">
+    </div>
+        <div class="row">
+            <div class="col-lg-6 text-center" >
+                <button type="button" on-click="handleYes()" class="btn btn-danger">Xóa sách</button>
+            </div>
+            <div class="col-lg-6 text-center">
+                <button type="button" on-click="handleNo()" class="btn btn-secondary">Trở Về</button>
+            </div>
+
+   
+    </div>
+</div>

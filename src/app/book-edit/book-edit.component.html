@@ -1,0 +1,59 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <table border="1px" style="width: 100%">
+        <h1 class=" text-center card-header text-danger"> Cập Nhật Sách</h1>
+        <hr>
+        <div class="row">
+            <div class="col-lg-2"><b style="float:right">Tên sách :</b></div>
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="bookname" placeholder="nhập tên sách"
+                        formControlName="bookname">
+                    <!-- bookFormShow validate -->
+                    <p *ngIf="!bookForm.controls['bookname']?.valid && (bookForm.controls['bookname']?.dirty)"
+                        class="help-block text-danger"> hàng không được bỏ trống</p>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-2"><b style="float:right">Tên tác giả : </b></div>
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="author" placeholder="nhập tên tác giả"
+                        formControlName="author">
+                    <!-- Show validate -->
+                    <p *ngIf="!bookForm.controls['author']?.valid && (bookForm.controls['author']?.dirty)"
+                        class="help-block text-danger"> hàng không được bỏ trống</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-2"><b style="float:right"> Mô tả : </b></div>
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <textarea type="text" class="form-control" id="description" placeholder="mô tả sản phẩm"
+                        formControlName="description"></textarea>
+                    <!-- Show validate -->
+                    <p *ngIf="!bookForm.controls['description']?.valid && (bookForm.controls['description']?.dirty)"
+                        class="help-block text-danger"> hàng không được bỏ trống</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 text-center">
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">Cập Nhật</button>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div>
+                    <button class="btn btn-secondary" onclick="window.history.go(-1);  false;">Trở Về</button>
+                </div>
+            </div>
+        </div>
+    </table>
+</form>
